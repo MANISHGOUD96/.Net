@@ -1,0 +1,50 @@
+﻿
+
+@model List<FirstProject1.Models.EmpModle>
+
+@{
+    ViewBag.Title = "Home Page";
+}
+
+<h1><b>Employee Details</b></h1>
+<style>
+    .border {
+        border: 3px solid black;
+        background-image: url('../../Image/image8.jpg');
+    }
+    body {
+        background-image: url('../../Image/image2.jpeg');
+    }
+</style>
+
+<Table class="table border table-bordered  table-hover table-responsive ">
+    <tr>
+        <th>eNo</th>
+        <th>eName</th>
+        <th>eSal</th>
+        <th>eDep</th>
+        <th>eAge</th>
+        <th>eAdhar</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+
+    @foreach (var item in Model)
+
+    {
+    <tr>
+        <td>@item.eNo</td>
+        <td>@item.eName</td>
+        <td>@item.eSal</td>
+        <td>@item.eDep</td>
+        <td>@item.eAge</td>
+        <td>@item.eAdhar</td>
+        <td><button class="btn btn-group">Edit</button></td>
+        <td><a class="btn btn-danger" href="@Url.Action("Delete","Home",new {item.eNo })">Delete</a></td>
+    </tr>
+    }
+
+</Table>
+
+<a class="btn btn-primary" href="Home/About" role="button">Next Page</a>
+

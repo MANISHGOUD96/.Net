@@ -1,0 +1,74 @@
+﻿@model FirstProject1.Models.EmpModle
+
+@{
+    ViewBag.Title = "AddEmp";
+}
+
+<h1 class="text-center"><b> Add Employee</b></h1>
+
+<style>
+    .span {
+        border: 2px solid skyblue;
+        width: 28%;
+        background-image: url('../../Image/image4.jpg');
+        
+    }
+    .error {
+        color:#ca0505;
+    }
+    body {
+        background-image: url('../../Image/image3.jpg');
+    }
+    
+</style>
+
+<div class="span center-block row mx-md-n5">
+    @using (Html.BeginForm("AddEmp", "Home", FormMethod.Post))
+    {
+
+        <div class="form-group">
+            <label>Name</label>
+            @Html.TextBoxFor(m => m.eName, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.eName, "", new { @class = "error" })
+        </div>
+
+
+        <div class="form-group">
+            <label>Selary</label>
+            @Html.TextBoxFor(m => m.eSal, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.eSal, "", new { @class = "error" })
+        </div>
+
+
+        <div class="form-group">
+            <label>Department</label>
+            @Html.TextBoxFor(m => m.eDep, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.eDep, "", new { @class = "error" })
+        </div>
+
+
+        <div class="form-group">
+            <label>Age</label>
+            @Html.TextBoxFor(m => m.eAge, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.eDep, "", new { @class = "error" })
+        </div>
+
+        <div class="form-group">
+            <label>Adhar</label>
+            @Html.TextBoxFor(m => m.eAdhar, new { @class = "form-control" })
+
+            @Html.ValidationMessageFor(m => m.eAdhar, "", new { @class = "error" })
+        </div>
+
+        <a class="btn btn-primary" href="Contact" role="button">Back Page</a>
+
+        <input class="btn btn-danger" type="reset" value="Reset">
+        <button class="btn btn-success" type="submit">Submit</button>
+
+    }
+</div>
+
